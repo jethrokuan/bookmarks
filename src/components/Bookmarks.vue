@@ -7,7 +7,9 @@
     <tag-pill v-for="label in labels" :title="label.title" :color="label.color"></tag-pill>
   </section>  
   <hr></hr>
-  <bookmark v-for="bookmark in bookmarks" :title="bookmark.title" :url="bookmark.body"></bookmark>
+  <ol id="bookmarks">
+  <bookmark v-for="bookmark in bookmarks" :title="bookmark.title" :url="bookmark.body" :date="bookmark.created_at" :discussion="bookmark.comments"></bookmark>
+  </ol>
   </template>
 </template>
 
@@ -74,11 +76,11 @@ export default {
 };
 </script>
 
-<style scoped>
-h1 {
-    color: #42b983;
-}
-#tags {
-    margin: 20px 0;
-}
+<style scoped lang="sass">
+h1
+  color: #42b983
+#tags
+  margin: 20px
+#bookmarks
+  text-align: left
 </style>
