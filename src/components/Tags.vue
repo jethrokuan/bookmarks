@@ -1,6 +1,6 @@
 <template>
   <section id="tagbar">
-    <span id="display" @click="toggleDisplay"><img class="chevron" src="../assets/chevron.jpg" :class=" {'hide': display, 'show': !display} "</img>Tags</span>
+    <span id="display" @click="toggleDisplay"><img class="chevron" src="../assets/chevron.png" :class=" {'hide': display, 'show': !display} "</img>Tags</span>
     <section id="tags">
       <tag-pill v-show="display" v-for="label in labels" :title.sync="label.title" :color.sync="label.color" :selected.sync="label.selected"></tag-pill>
     </section>    
