@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-    <h1>Bookmarks</h1>
     <bookmarks></bookmarks>
   </div>
 </template>

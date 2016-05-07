@@ -18,12 +18,15 @@ export default {
 };
 </script>
 
-<style lang="sass">
-li
+<style lang="scss" scoped>
+li {
   padding: 5px 0;
-a
-  display: block
-#date
-  color: #aaa
-  font-size: 14px
+}
+a {
+  display: block;
+}
+#date {
+  color: #aaa;
+  font-size: 14px;
+}
 </style>
