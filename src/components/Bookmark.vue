@@ -1,9 +1,14 @@
 <template>
-  <a href="{{bookmark.body}}">{{bookmark.title}}</a>
+  <a href="{{url}}">{{title}}</a>
 </template>
 
 <script>
 export default {
-  props: ['bookmark'],
+  props: ['url', 'title'],
 };
 </script>
+
+<style lang="sass">
+a
+  display: block
+</style>

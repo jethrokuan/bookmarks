@@ -7,7 +7,7 @@
     <tag-pill v-for="label in labels" :title="label.title" :color="label.color"></tag-pill>
   </section>  
   <hr></hr>
-  <bookmark v-for="bookmark in bookmarks" :bookmark="bookmark"></bookmark>
+  <bookmark v-for="bookmark in bookmarks" :title="bookmark.title" :url="bookmark.body"></bookmark>
   </template>
 </template>
 
