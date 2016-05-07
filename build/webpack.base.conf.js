@@ -82,12 +82,5 @@ module.exports = {
   },
   vue: {
     loaders: utils.cssLoaders()
-  },
-  plugins: [
-    new webpack.DefinePlugin({ "global.GENTLY": false})
-  ]
-  ,
-  node: {
-    __dirname: true
   }
 }
