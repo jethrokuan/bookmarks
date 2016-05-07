@@ -23,9 +23,12 @@
 
 <style lang="scss" scoped>
 span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    height: 50px;
     text-transform: uppercase;
-    padding: 10px 40px;
-    margin: 0 5px;
     transition: all 0.2s ease-in;
 }
 span:hover {
