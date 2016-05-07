@@ -1,23 +1,31 @@
 <template>
+  <template v-if="loading">
+    <pulse :loading="loading"></pulse>
+  </template>
+  <template v-else>
   <section id="tags">
     <tag-pill v-for="label in labels" :title="label.title" :color="label.color"></tag-pill>
   </section>  
   <hr></hr>
   <bookmark v-for="bookmark in bookmarks" :bookmark="bookmark"></bookmark>
+  </template>
 </template>
 
 <script>
 import request from 'superagent';
 import TagPill from './TagPill';
 import Bookmark from './Bookmark';
+import PulseSpinner from 'vue-spinner/src/PulseLoader';
 
 export default {
   components: {
+    pulse: PulseSpinner,
     'tag-pill': TagPill,
     bookmark: Bookmark,
   },
   data() {
     return {
+      loading: true,
       bookmarks: [],
     };
   },
@@ -38,6 +46,7 @@ export default {
             if (err2) {
               return;
             }
+            this.$set('loading', false);
             this.$set('bookmarks', JSON.parse(ghData.text));
           });
       });
