@@ -20,7 +20,6 @@ import request from 'superagent';
 import TagPill from './TagPill';
 import Bookmark from './Bookmark';
 import PulseSpinner from 'vue-spinner/src/PulseLoader';
-import _ from 'underscore';
 
 export default {
   components: {
@@ -57,20 +56,22 @@ export default {
               return;
             }
             const data = JSON.parse(ghData.text);
-            const labels = new Set();
-            let i;
-            let j;
-            for (i in data) {
-              for (j in data[i].labels) {
-                labels.add({
-                  title: data[i].labels[j].name,
-                  color: data[i].labels[j].color,
-                  selected: true,
-                });
+            const labelSet = [];
+            const labels = [];
+            for (const i in data) {
+              for (const j in data[i].labels) {
+                if (labels.indexOf(data[i].labels[j].name) === -1) {
+                  labelSet.push({
+                    title: data[i].labels[j].name,
+                    color: data[i].labels[j].color,
+                    selected: true,
+                  });
+                  labels.push(data[i].labels[j].name);
+                }
               }
             }
             this.$set('loading', false);
-            this.$set('labels', Array.from(labels));
+            this.$set('labels', labelSet);
             this.$set('bookmarks', data);
           });
       });
@@ -94,8 +95,14 @@ export default {
         for (const j in this.bookmarks[i].labels) {
           labels.push(this.bookmarks[i].labels[j].name);
         }
-        const result = _.intersection(labels, this.selectedLabels);
-        if (result.length !== 0) {
+        let result = false;
+        for (const k in this.selectedLabels) {
+          if (labels.indexOf(this.selectedLabels[k].name) !== 1) {
+            result = true;
+            break;
+          }
+        }
+        if (result) {
           bookmarks.push(this.bookmarks[i]);
         }
       }
