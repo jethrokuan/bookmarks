@@ -13802,10 +13802,13 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	exports.default = {
-	  props: ['url', 'title', 'discussion', 'date'],
-	  methods: {
-	    prettyDate: function prettyDate(date) {
-	      return (0, _moment2.default)(date).format('MMM Do, YYYY');
+	  props: ['bookmark'],
+	  computed: {
+	    date: function date() {
+	      return (0, _moment2.default)(this.bookmark.date).format('MMM Do, YYYY');
+	    },
+	    url: function url() {
+	      return this.bookmark.url.replace('api.github.com/repos', 'github.com');
 	    }
 	  }
 	};
@@ -13832,6 +13835,9 @@
 	    Bookmark: _Bookmark2.default
 	  },
 	  computed: {
+	    repoUrl: function repoUrl() {
+	      return 'https://github.com/' + this.repo + '/issues';
+	    },
 	    selectedLabels: function selectedLabels() {
 	      var arr = [];
 	      var i = void 0;
@@ -15699,7 +15705,7 @@
 /* 123 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div id=\"app\">\n  <template v-if=\"loading\">\n    <h1>Loading...</h1></br>\n    <pulse-spinner :loading=\"loading\"></pulse-spinner>\n  </template>\n  <template v-else>\n    <tags :labels.sync=\"labels\"></tags>\n    <bookmarks :bookmarks.sync=\"bookmarks\" :labels.sync=\"labels\" :repo.sync=\"repo\"></bookmarks>\n  </template>\n</div>\n<a href=\"https://github.com/jethrokuan/bookmarks\"><img style=\"position: absolute; top: 0; left: 0; border: 0;\" src=\"https://camo.githubusercontent.com/121cd7cbdc3e4855075ea8b558508b91ac463ac2/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f677265656e5f3030373230302e706e67\" alt=\"Fork me on GitHub\" data-canonical-src=\"https://s3.amazonaws.com/github/ribbons/forkme_left_green_007200.png\"></a>\n";
+	module.exports = "\n<div id=\"app\">\n  <template v-if=\"loading\">\n    <h1>Loading...</h1></br>\n    <pulse-spinner :loading=\"loading\"></pulse-spinner>\n  </template>\n  <template v-else>\n    <tags :labels.sync=\"labels\"></tags>\n    <bookmarks :bookmarks.sync=\"bookmarks\" :labels.sync=\"labels\" :repo.sync=\"repo\"></bookmarks>\n  </template>\n  </div>\n<a href=\"https://github.com/jethrokuan/bookmarks\"><img style=\"position: absolute; top: 0; left: 0; border: 0;\" src=\"https://camo.githubusercontent.com/121cd7cbdc3e4855075ea8b558508b91ac463ac2/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f677265656e5f3030373230302e706e67\" alt=\"Fork me on GitHub\" data-canonical-src=\"https://s3.amazonaws.com/github/ribbons/forkme_left_green_007200.png\"></a>\n";
 
 /***/ },
 /* 124 */
@@ -15717,13 +15723,13 @@
 /* 126 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<li _v-6ac7762a=\"\">\n  <a href=\"{{url}}\" _v-6ac7762a=\"\">{{title}}</a>\n  <span id=\"date\" _v-6ac7762a=\"\">{{prettyDate(date)}}</span>\n</li>\n";
+	module.exports = "\n<li _v-6ac7762a=\"\">\n  <a href=\"{{bookmark.body}}\" _v-6ac7762a=\"\">{{bookmark.title}}</a>\n  <a href=\"{{url}}\" _v-6ac7762a=\"\"><span id=\"comments\" _v-6ac7762a=\"\">{{bookmark.comments}}</span></a>\n  <span v-for=\"{{label in bookmark.labels}}\" :style=\"{backgroundColor: label.color}\" _v-6ac7762a=\"\">hi</span>\n  <span id=\"date\" _v-6ac7762a=\"\">{{date}}</span>\n</li>\n";
 
 /***/ },
 /* 127 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<h1 _v-e6d00cd0=\"\">Bookmarks <a href=\"{{`https://github.com/${repo}/issues`}}\" _v-e6d00cd0=\"\">Repo</a></h1>\n<ol v-if=\"haveBookmarks\" id=\"bookmarks\" _v-e6d00cd0=\"\">\n  <bookmark v-for=\"bookmark in selectedBookmarks\" :title=\"bookmark.title\" :url=\"bookmark.body\" :date=\"bookmark.created_at\" :discussion=\"bookmark.comments\" _v-e6d00cd0=\"\"></bookmark>\n</ol>\n<h2 v-else=\"\" _v-e6d00cd0=\"\">Nothing here!</h2>\n";
+	module.exports = "\n<h1 _v-e6d00cd0=\"\">Bookmarks <a href=\"{{repoUrl}}\" _v-e6d00cd0=\"\">Repo</a></h1>\n<ol v-if=\"haveBookmarks\" id=\"bookmarks\" _v-e6d00cd0=\"\">\n  <bookmark v-for=\"bookmark in selectedBookmarks\" :bookmark.once=\"bookmark\" _v-e6d00cd0=\"\"></bookmark>\n</ol>\n<h2 v-else=\"\" _v-e6d00cd0=\"\">Nothing here!</h2>\n";
 
 /***/ },
 /* 128 */
@@ -25786,4 +25792,4 @@
 
 /***/ }
 /******/ ]);
-//# sourceMappingURL=app.4e9581a0eaf0bf3f92af.js.map
+//# sourceMappingURL=app.7c283f0d7818ba94632b.js.map

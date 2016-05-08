@@ -1,41 +1,41 @@
 
 html {
-  height: 100%;
+    height: 100%;
 }
 
 body {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  height: 100%;
-  margin: 0;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    min-height: 100%;
+    margin: 0;
 }
 
 #app {
-  color: #2c3e50;
-  margin-top: -100px;
-  max-width: 600px;
-  font-family: Source Sans Pro, Helvetica, sans-serif;
-  text-align: center;
+    color: #2c3e50;
+    margin-top: 50px;
+    max-width: 600px;
+    font-family: Source Sans Pro, Helvetica, sans-serif;
+    text-align: center;
 }
 
 #app a {
-  color: #42b983;
-  text-decoration: none;
+    color: #42b983;
+    text-decoration: none;
 }
 
 .logo {
-  width: 100px;
-  height: 100px
+    width: 100px;
+    height: 100px
 }
 h1[_v-e6d00cd0] {
   color: #444;
@@ -50,9 +50,19 @@ li[_v-6ac7762a] {
   padding: 5px 0; }
 
 a[_v-6ac7762a] {
-  display: block; }
+  display: inline-block; }
+
+#comments[_v-6ac7762a] {
+  display: inline;
+  font-size: 14px;
+  color: #666;
+  background-color: #FFF;
+  padding: 1px 4px;
+  border-radius: 2px;
+  border: 1px solid #666; }
 
 #date[_v-6ac7762a] {
+  display: block;
   color: #aaa;
   font-size: 14px; }
 .hide[_v-64e540ce] {
@@ -191,4 +201,4 @@ span.selected[_v-3e10694e] {
     }
 }
 
-/*# sourceMappingURL=app.62b60b817f96df656c77a2e1a08e99f2.css.map*/
+/*# sourceMappingURL=app.bec4432a0f0ae1d9867794a3e5eac326.css.map*/
