@@ -1,7 +1,7 @@
 <template>
   <li>
-    <a href="{{url}}">{{title}}</a>
-    <span id="date">{{prettyDate(date)}}</span>
+    <a href="{{bookmark.url}}">{{bookmark.title}}</a>
+    <span id="date">{{date}}</span>
   </li>
 </template>
 
@@ -9,10 +9,10 @@
 import moment from 'moment';
 
 export default {
-  props: ['url', 'title', 'discussion', 'date'],
-  methods: {
-    prettyDate(date) {
-      return moment(date).format('MMM Do, YYYY');
+  props: ['bookmark'],
+  computed: {
+    date() {
+      return moment(this.bookmark.date).format('MMM Do, YYYY');
     },
   },
 };

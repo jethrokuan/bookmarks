@@ -1,7 +1,7 @@
 <template>
-  <h1>Bookmarks <a href="{{`https://github.com/${repo}/issues`}}">Repo</a></h1>
+  <h1>Bookmarks <a href="{{repoUrl}}">Repo</a></h1>
   <ol v-if="haveBookmarks" id="bookmarks">
-    <bookmark v-for="bookmark in selectedBookmarks" :title="bookmark.title" :url="bookmark.body" :date="bookmark.created_at" :discussion="bookmark.comments"></bookmark>
+    <bookmark v-for="bookmark in selectedBookmarks" :bookmark.once="bookmark"></bookmark>
   </ol>
   <h2 v-else>Nothing here!</h2>
 </template>
@@ -15,6 +15,9 @@ export default {
     Bookmark,
   },
   computed: {
+    repoUrl() {
+      return `https://github.com/${this.repo}/issues`;
+    },
     selectedLabels() {
       const arr = [];
       let i;
