@@ -1,5 +1,5 @@
 <template>
-  <h1>Bookmarks</h1>
+  <h1>Bookmarks <a href="{{`https://github.com/${repo}/issues`}}">Repo</a></h1>
   <ol v-if="haveBookmarks" id="bookmarks">
     <bookmark v-for="bookmark in selectedBookmarks" :title="bookmark.title" :url="bookmark.body" :date="bookmark.created_at" :discussion="bookmark.comments"></bookmark>
   </ol>
@@ -10,7 +10,7 @@
 import Bookmark from './Bookmark';
 
 export default {
-  props: ['bookmarks', 'labels'],
+  props: ['bookmarks', 'labels', 'repo'],
   components: {
     Bookmark,
   },
@@ -52,11 +52,12 @@ export default {
 <style lang="scss" scoped>
 h1 {
     color: #444;
-}
-
-#tags {
-    padding: 20px;
     box-shadow: 0 8px 8px -6px rgba(0,0,0,0.2);
+    a {
+        font-size: 10px;
+        text-decoration: underline;
+    }
+    
 }
 
 #bookmarks {
