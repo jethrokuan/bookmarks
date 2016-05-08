@@ -13736,6 +13736,7 @@
 	  },
 	  data: function data() {
 	    return {
+	      repo: '',
 	      loading: true,
 	      labels: [],
 	      bookmarks: []
@@ -13754,6 +13755,7 @@
 	          return;
 	        }
 	        var config = JSON.parse(configRes.text);
+	        _this.$set('repo', config.repo);
 	        var url = 'https://api.github.com/repos/' + config.repo + '/issues';
 	        _superagent2.default.get(url).set('Accept', 'application/json').end(function (err2, ghData) {
 	          if (err2) {
@@ -13825,7 +13827,7 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	exports.default = {
-	  props: ['bookmarks', 'labels'],
+	  props: ['bookmarks', 'labels', 'repo'],
 	  components: {
 	    Bookmark: _Bookmark2.default
 	  },
@@ -15697,7 +15699,7 @@
 /* 123 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div id=\"app\">\n  <template v-if=\"loading\">\n    <h1>Loading...</h1></br>\n    <pulse-spinner :loading=\"loading\"></pulse-spinner>\n  </template>\n  <template v-else>\n    <tags :labels.sync=\"labels\"></tags>\n    <bookmarks :bookmarks.sync=\"bookmarks\" :labels.sync=\"labels\"></bookmarks>\n  </template>\n</div>\n<a href=\"https://github.com/jethrokuan/bookmarks\"><img style=\"position: absolute; top: 0; left: 0; border: 0;\" src=\"https://camo.githubusercontent.com/121cd7cbdc3e4855075ea8b558508b91ac463ac2/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f677265656e5f3030373230302e706e67\" alt=\"Fork me on GitHub\" data-canonical-src=\"https://s3.amazonaws.com/github/ribbons/forkme_left_green_007200.png\"></a>\n";
+	module.exports = "\n<div id=\"app\">\n  <template v-if=\"loading\">\n    <h1>Loading...</h1></br>\n    <pulse-spinner :loading=\"loading\"></pulse-spinner>\n  </template>\n  <template v-else>\n    <tags :labels.sync=\"labels\"></tags>\n    <bookmarks :bookmarks.sync=\"bookmarks\" :labels.sync=\"labels\" :repo.sync=\"repo\"></bookmarks>\n  </template>\n</div>\n<a href=\"https://github.com/jethrokuan/bookmarks\"><img style=\"position: absolute; top: 0; left: 0; border: 0;\" src=\"https://camo.githubusercontent.com/121cd7cbdc3e4855075ea8b558508b91ac463ac2/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f677265656e5f3030373230302e706e67\" alt=\"Fork me on GitHub\" data-canonical-src=\"https://s3.amazonaws.com/github/ribbons/forkme_left_green_007200.png\"></a>\n";
 
 /***/ },
 /* 124 */
@@ -15721,7 +15723,7 @@
 /* 127 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<h1 _v-e6d00cd0=\"\">Bookmarks</h1>\n<ol v-if=\"haveBookmarks\" id=\"bookmarks\" _v-e6d00cd0=\"\">\n  <bookmark v-for=\"bookmark in selectedBookmarks\" :title=\"bookmark.title\" :url=\"bookmark.body\" :date=\"bookmark.created_at\" :discussion=\"bookmark.comments\" _v-e6d00cd0=\"\"></bookmark>\n</ol>\n<h2 v-else=\"\" _v-e6d00cd0=\"\">Nothing here!</h2>\n";
+	module.exports = "\n<h1 _v-e6d00cd0=\"\">Bookmarks <a href=\"{{`https://github.com/${repo}/issues`}}\" _v-e6d00cd0=\"\">Repo</a></h1>\n<ol v-if=\"haveBookmarks\" id=\"bookmarks\" _v-e6d00cd0=\"\">\n  <bookmark v-for=\"bookmark in selectedBookmarks\" :title=\"bookmark.title\" :url=\"bookmark.body\" :date=\"bookmark.created_at\" :discussion=\"bookmark.comments\" _v-e6d00cd0=\"\"></bookmark>\n</ol>\n<h2 v-else=\"\" _v-e6d00cd0=\"\">Nothing here!</h2>\n";
 
 /***/ },
 /* 128 */
@@ -25784,4 +25786,4 @@
 
 /***/ }
 /******/ ]);
-//# sourceMappingURL=app.f3c57deb6d65deaa64cc.js.map
+//# sourceMappingURL=app.4e9581a0eaf0bf3f92af.js.map
