@@ -86,9 +86,8 @@ html {
 
 body {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     min-height: 100%;
     margin: 0;
 }
