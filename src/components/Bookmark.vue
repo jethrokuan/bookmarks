@@ -32,8 +32,8 @@ a {
 }
 #comments {
     display: inline;
-    font-size: 14px;
-    color: #666;
+    font-size: 10px;
+    color: #888;
     background-color: #FFF;
     padding: 1px 4px;
     border-radius: 2px;
@@ -41,7 +41,7 @@ a {
 }
 #date {
     display: block;
-    color: #aaa;
-    font-size: 14px;
+    color: #888;
+    font-size: 10px;
 }
 </style>
