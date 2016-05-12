@@ -13933,9 +13933,16 @@
 	
 	exports.default = {
 	  props: ['labels'],
+	  ready: function ready() {
+	    var _this = this;
+	
+	    setTimeout(function () {
+	      _this.display = false;
+	    }, 1000);
+	  },
 	  data: function data() {
 	    return {
-	      display: false
+	      display: true
 	    };
 	  },
 	
@@ -25799,4 +25806,4 @@
 
 /***/ }
 /******/ ]);
-//# sourceMappingURL=app.c3a1d0e2da3a2790f802.js.map
+//# sourceMappingURL=app.55e5602c3af8dc50188f.js.map

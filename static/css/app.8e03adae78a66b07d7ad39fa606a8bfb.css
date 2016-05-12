@@ -152,17 +152,17 @@ span[_v-3e10694e] {
   transition: all 0.2s ease-in; }
 
 span[_v-3e10694e]:hover {
-  opacity: 0.5;
+  opacity: 0.8;
   cursor: pointer;
-  -webkit-transition: all 0.2s ease-in;
-  transition: all 0.2s ease-in; }
+  -webkit-transition: all 0.1s ease-in;
+  transition: all 0.1s ease-in; }
 
 span.selected[_v-3e10694e] {
   background-color: #eee !important;
   color: #aaa !important;
   opacity: 0.8;
-  -webkit-transition: all 0.2s ease-in;
-  transition: all 0.2s ease-in; }
+  -webkit-transition: all 0.1s ease-in;
+  transition: all 0.1s ease-in; }
 
 /*.v-spinner
 {
@@ -209,4 +209,4 @@ span.selected[_v-3e10694e] {
     }
 }
 
-/*# sourceMappingURL=app.db2ac81895609c4331991b3f2e4cb4db.css.map*/
+/*# sourceMappingURL=app.8e03adae78a66b07d7ad39fa606a8bfb.css.map*/
