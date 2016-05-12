@@ -15,9 +15,12 @@ import TagPill from './TagPill';
 
 export default {
   props: ['labels'],
+  ready() {
+    setTimeout(() => {this.display = false;}, 1000);
+  },
   data() {
     return {
-      display: false,
+      display: true,
     };
   },
   components: {

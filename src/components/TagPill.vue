@@ -32,15 +32,15 @@ span {
     transition: all 0.2s ease-in;
 }
 span:hover {
-    opacity: 0.5;
+    opacity: 0.8;
     cursor: pointer;
-    transition: all 0.2s ease-in;                      
+    transition: all 0.1s ease-in;
 }
 
 span.selected {
     background-color: #eee !important;
     color: #aaa !important;
     opacity: 0.8;
-    transition: all 0.2s ease-in;
+    transition: all 0.1s ease-in;
 }
 </style>
