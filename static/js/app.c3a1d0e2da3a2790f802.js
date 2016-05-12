@@ -13809,6 +13809,13 @@
 	    },
 	    url: function url() {
 	      return this.bookmark.url.replace('api.github.com/repos', 'github.com');
+	    },
+	    commentString: function commentString() {
+	      var c = this.bookmark.comments;
+	      if (c === 1) {
+	        return c + ' comment';
+	      }
+	      return c + ' comments';
 	    }
 	  }
 	};
@@ -15723,7 +15730,7 @@
 /* 126 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<li _v-6ac7762a=\"\">\n  <a href=\"{{bookmark.body}}\" _v-6ac7762a=\"\">{{bookmark.title}}</a>\n  <a href=\"{{url}}\" _v-6ac7762a=\"\"><span id=\"comments\" _v-6ac7762a=\"\">{{bookmark.comments}}</span></a>\n  <span v-for=\"{{label in bookmark.labels}}\" :style=\"{backgroundColor: label.color}\" _v-6ac7762a=\"\">hi</span>\n  <span id=\"date\" _v-6ac7762a=\"\">{{date}}</span>\n</li>\n";
+	module.exports = "\n<li _v-6ac7762a=\"\">\n  <a href=\"{{bookmark.body}}\" _v-6ac7762a=\"\">{{bookmark.title}}</a>\n\n  <span id=\"circle\" v-for=\"label in bookmark.labels\" :style=\"{color: '#'+label.color}\" _v-6ac7762a=\"\"></span>\n  <section class=\"desc\" _v-6ac7762a=\"\">\n    <span id=\"date\" _v-6ac7762a=\"\">{{date}}</span>\n    <a href=\"{{url}}\" _v-6ac7762a=\"\"><span id=\"comments\" _v-6ac7762a=\"\">{{commentString}}</span></a>\n  </section>\n</li>\n";
 
 /***/ },
 /* 127 */
@@ -25792,4 +25799,4 @@
 
 /***/ }
 /******/ ]);
-//# sourceMappingURL=app.7c283f0d7818ba94632b.js.map
+//# sourceMappingURL=app.c3a1d0e2da3a2790f802.js.map
