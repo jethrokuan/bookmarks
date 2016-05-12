@@ -1,9 +1,12 @@
 <template>
   <li>
     <a href="{{bookmark.body}}">{{bookmark.title}}</a>
-    <a href="{{url}}"><span id="comments">{{bookmark.comments}}</span></a>
-    <span v-for="{{label in bookmark.labels}}" :style="{backgroundColor: label.color}">hi</span>
-    <span id="date">{{date}}</span>
+
+    <span id="circle" v-for="label in bookmark.labels" :style="{color: '#'+label.color}"></span>
+    <section class="desc">
+      <span id="date">{{date}}</span>
+      <a href="{{url}}"><span id="comments">{{commentString}}</span></a>
+    </section>
   </li>
 </template>
 
@@ -19,6 +22,13 @@ export default {
     url() {
       return this.bookmark.url.replace('api.github.com/repos', 'github.com');
     },
+    commentString() {
+      const c = this.bookmark.comments;
+      if (c === 1) {
+        return `${c} comment`;
+      }
+      return `${c} comments`;
+    },
   },
 };
 </script>
@@ -31,17 +41,22 @@ a {
   display: inline-block;
 }
 #comments {
-    display: inline;
     font-size: 10px;
     color: #888;
     background-color: #FFF;
-    padding: 1px 4px;
-    border-radius: 2px;
-    border: 1px solid #666;
+    text-decoration: underline;
+}
+
+.desc {
+    display: block;
 }
 #date {
-    display: block;
     color: #888;
     font-size: 10px;
+}
+
+#circle:before {
+    content: ' \25CF';
+    font-size: 20px;
 }
 </style>
