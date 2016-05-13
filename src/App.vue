@@ -5,10 +5,13 @@
       <pulse-spinner :loading="loading"></pulse-spinner>
     </template>
     <template v-else>
-      <tags :labels.sync="labels"></tags>
-      <bookmarks :bookmarks.sync="bookmarks" :labels.sync="labels" :repo.sync="repo"></bookmarks>
+    <tags :labels.sync="labels"></tags>
+                 <h1>Bookmarks<a href="{{repoUrl}}">Repo</a></h1>
+                 <hr/>
+    <bookmarks :bookmarks.sync="bookmarks" :labels.sync="labels" :repo.sync="repo"></bookmarks>
+    <footer>Built with ❤ by <a href="http://www.jethrokuan.com">Jethro Kuan</a></footer>
     </template>
-    </div>
+  </div>
   <a href="https://github.com/jethrokuan/bookmarks"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://camo.githubusercontent.com/121cd7cbdc3e4855075ea8b558508b91ac463ac2/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f677265656e5f3030373230302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_green_007200.png"></a>
 </template>
 
@@ -31,6 +34,11 @@ export default {
       labels: [],
       bookmarks: [],
     };
+  },
+  computed: {
+    repoUrl() {
+      return `https://github.com/${this.repo}/issues`;
+    },
   },
   ready() {
     this.fetchData();
@@ -85,28 +93,56 @@ html {
 }
 
 body {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 100%;
-    margin: 0;
+    width: 720px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #app {
     color: #2c3e50;
     margin-top: 50px;
-    max-width: 720px;
     font-family: Source Sans Pro, Helvetica, sans-serif;
     text-align: center;
 }
 
-#app a {
+header {
+    box-shadow: 0 8px 8px -6px rgba(0,0,0,0.2);
+}
+
+a {
     color: #42b983;
-    text-decoration: none;
+    text-decoration: underline;
 }
 
 .logo {
     width: 100px;
     height: 100px
+}
+
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 720px;
+
+    position:absolute;
+    margin: 0 auto auto;
+    bottom: 30px;
+}
+</style>
+
+<style scoped lang="scss">
+h1 {
+    display: block;
+    text-align: left;
+    margin-bottom: 4px;
+    font-size: 20px;
+    margin: 0;
+}
+a {
+    display: block;
+    float: right;
+    padding: 0 3px;
+    font-size: 14px;
 }
 </style>

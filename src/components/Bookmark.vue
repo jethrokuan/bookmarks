@@ -17,7 +17,7 @@ export default {
   props: ['bookmark'],
   computed: {
     date() {
-      return moment(this.bookmark.date).format('MMM Do, YYYY');
+      return moment(this.bookmark.created_at).format('MMM Do, YYYY');
     },
     url() {
       return this.bookmark.url.replace('api.github.com/repos', 'github.com');
@@ -35,11 +35,14 @@ export default {
 
 <style lang="scss" scoped>
 li {
-  padding: 5px 0;
+    padding: 4px 0;
+    line-height: 0.8;
 }
+
 a {
-  display: inline-block;
+    text-decoration: none;
 }
+
 #comments {
     font-size: 10px;
     color: #888;

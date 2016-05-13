@@ -1,5 +1,4 @@
 <template>
-  <h1>Bookmarks <a href="{{repoUrl}}">Repo</a></h1>
   <ol v-if="haveBookmarks" id="bookmarks">
     <bookmark v-for="bookmark in selectedBookmarks" :bookmark.once="bookmark"></bookmark>
   </ol>
@@ -15,9 +14,6 @@ export default {
     Bookmark,
   },
   computed: {
-    repoUrl() {
-      return `https://github.com/${this.repo}/issues`;
-    },
     selectedLabels() {
       const arr = [];
       let i;
@@ -53,16 +49,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-h1 {
-    color: #444;
-    box-shadow: 0 8px 8px -6px rgba(0,0,0,0.2);
-    a {
-        font-size: 10px;
-        text-decoration: underline;
-    }
-    
-}
-
 #bookmarks {
     text-align: left;
     max-height: 60vh;
