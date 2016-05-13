@@ -1,8 +1,10 @@
 <template>
   <div id="app">
     <template v-if="loading">
-      <h1>Loading...</h1></br>
-      <pulse-spinner :loading="loading"></pulse-spinner>
+      <div id="loading">
+        <h1>Loading...</h1>
+        <pulse-spinner :loading="loading"></pulse-spinner>
+      </div>
     </template>
     <template v-else>
     <tags :labels.sync="labels"></tags>
@@ -132,6 +134,16 @@ footer {
 </style>
 
 <style scoped lang="scss">
+#loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    h1 {
+        font-size: 34px;
+    }
+}
 h1 {
     display: block;
     text-align: left;
