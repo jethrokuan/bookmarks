@@ -4,6 +4,33 @@ html {
 }
 
 body {
+    width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#app {
+    color: #2c3e50;
+    margin-top: 50px;
+    font-family: Source Sans Pro, Helvetica, sans-serif;
+    text-align: center;
+}
+
+header {
+    box-shadow: 0 8px 8px -6px rgba(0,0,0,0.2);
+}
+
+a {
+    color: #42b983;
+    text-decoration: underline;
+}
+
+.logo {
+    width: 100px;
+    height: 100px
+}
+
+footer {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -16,46 +43,52 @@ body {
     -webkit-justify-content: center;
         -ms-flex-pack: center;
             justify-content: center;
-    min-height: 100%;
-    margin: 0;
-}
+    width: 720px;
 
-#app {
-    color: #2c3e50;
-    margin-top: 50px;
-    max-width: 720px;
-    font-family: Source Sans Pro, Helvetica, sans-serif;
-    text-align: center;
+    margin: 0 auto auto;
 }
+#loading[_v-fb5a5486] {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 100vh; }
+  #loading h1[_v-fb5a5486] {
+    font-size: 34px; }
 
-#app a {
-    color: #42b983;
-    text-decoration: none;
-}
-
-.logo {
-    width: 100px;
-    height: 100px
-}
-h1[_v-e6d00cd0] {
-  color: #444;
-  box-shadow: 0 8px 8px -6px rgba(0, 0, 0, 0.2); }
-  h1 a[_v-e6d00cd0] {
-    font-size: 10px;
-    text-decoration: underline; }
-
-#bookmarks[_v-e6d00cd0] {
+h1[_v-fb5a5486] {
+  display: block;
   text-align: left;
-  max-height: 60vh;
-  overflow-y: auto; }
+  margin-bottom: 4px;
+  font-size: 20px;
+  margin: 0; }
 
-[_v-e6d00cd0]::-webkit-scrollbar {
-  display: none; }
+a[_v-fb5a5486] {
+  display: block;
+  float: right;
+  padding: 0 3px;
+  font-size: 14px; }
+#bookmarks[_v-e6d00cd0] {
+  text-align: left; }
 li[_v-6ac7762a] {
-  padding: 5px 0; }
+  padding: 4px 0;
+  line-height: 0.8; }
 
 a[_v-6ac7762a] {
-  display: inline-block; }
+  text-decoration: none; }
 
 #comments[_v-6ac7762a] {
   font-size: 10px;
@@ -209,4 +242,4 @@ span.selected[_v-3e10694e] {
     }
 }
 
-/*# sourceMappingURL=app.8e03adae78a66b07d7ad39fa606a8bfb.css.map*/
+/*# sourceMappingURL=app.9462f43493bbccea3d82cb4a358f3e91.css.map*/

@@ -46,11 +46,11 @@
 
 	'use strict';
 	
-	var _vue = __webpack_require__(134);
+	var _vue = __webpack_require__(135);
 	
 	var _vue2 = _interopRequireDefault(_vue);
 	
-	var _App = __webpack_require__(128);
+	var _App = __webpack_require__(129);
 	
 	var _App2 = _interopRequireDefault(_App);
 	
@@ -463,7 +463,7 @@
 	                module && module.exports) {
 	            try {
 	                oldLocale = globalLocale._abbr;
-	                __webpack_require__(115)("./" + name);
+	                __webpack_require__(116)("./" + name);
 	                // because defineLocale currently also sets the global locale, we
 	                // want to undo that for lazy loaded locales
 	                locale_locales__getSetGlobalLocale(oldLocale);
@@ -4105,7 +4105,7 @@
 	    return _moment;
 	
 	}));
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(135)(module)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(136)(module)))
 
 /***/ },
 /* 2 */
@@ -13710,19 +13710,19 @@
 	  value: true
 	});
 	
-	var _Bookmarks = __webpack_require__(130);
+	var _Bookmarks = __webpack_require__(131);
 	
 	var _Bookmarks2 = _interopRequireDefault(_Bookmarks);
 	
-	var _Tags = __webpack_require__(132);
+	var _Tags = __webpack_require__(133);
 	
 	var _Tags2 = _interopRequireDefault(_Tags);
 	
-	var _PulseLoader = __webpack_require__(133);
+	var _PulseLoader = __webpack_require__(134);
 	
 	var _PulseLoader2 = _interopRequireDefault(_PulseLoader);
 	
-	var _superagent = __webpack_require__(117);
+	var _superagent = __webpack_require__(118);
 	
 	var _superagent2 = _interopRequireDefault(_superagent);
 	
@@ -13741,6 +13741,12 @@
 	      labels: [],
 	      bookmarks: []
 	    };
+	  },
+	
+	  computed: {
+	    repoUrl: function repoUrl() {
+	      return 'https://github.com/' + this.repo + '/issues';
+	    }
 	  },
 	  ready: function ready() {
 	    this.fetchData();
@@ -13805,7 +13811,7 @@
 	  props: ['bookmark'],
 	  computed: {
 	    date: function date() {
-	      return (0, _moment2.default)(this.bookmark.date).format('MMM Do, YYYY');
+	      return (0, _moment2.default)(this.bookmark.created_at).format('MMM Do, YYYY');
 	    },
 	    url: function url() {
 	      return this.bookmark.url.replace('api.github.com/repos', 'github.com');
@@ -13830,7 +13836,7 @@
 	  value: true
 	});
 	
-	var _Bookmark = __webpack_require__(129);
+	var _Bookmark = __webpack_require__(130);
 	
 	var _Bookmark2 = _interopRequireDefault(_Bookmark);
 	
@@ -13842,9 +13848,6 @@
 	    Bookmark: _Bookmark2.default
 	  },
 	  computed: {
-	    repoUrl: function repoUrl() {
-	      return 'https://github.com/' + this.repo + '/issues';
-	    },
 	    selectedLabels: function selectedLabels() {
 	      var arr = [];
 	      var i = void 0;
@@ -13925,7 +13928,7 @@
 	  value: true
 	});
 	
-	var _TagPill = __webpack_require__(131);
+	var _TagPill = __webpack_require__(132);
 	
 	var _TagPill2 = _interopRequireDefault(_TagPill);
 	
@@ -13994,6 +13997,12 @@
 
 /***/ },
 /* 115 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 116 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var map = {
@@ -14209,11 +14218,11 @@
 	};
 	webpackContext.resolve = webpackContextResolve;
 	module.exports = webpackContext;
-	webpackContext.id = 115;
+	webpackContext.id = 116;
 
 
 /***/ },
-/* 116 */
+/* 117 */
 /***/ function(module, exports) {
 
 	
@@ -14242,16 +14251,16 @@
 	};
 
 /***/ },
-/* 117 */
+/* 118 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
 	 * Module dependencies.
 	 */
 	
-	var Emitter = __webpack_require__(120);
-	var reduce = __webpack_require__(116);
-	var requestBase = __webpack_require__(118);
+	var Emitter = __webpack_require__(121);
+	var reduce = __webpack_require__(117);
+	var requestBase = __webpack_require__(119);
 	var isObject = __webpack_require__(102);
 	
 	/**
@@ -14301,7 +14310,7 @@
 	 * Expose `request`.
 	 */
 	
-	var request = module.exports = __webpack_require__(119).bind(null, Request);
+	var request = module.exports = __webpack_require__(120).bind(null, Request);
 	
 	/**
 	 * Determine XHR.
@@ -15325,7 +15334,7 @@
 
 
 /***/ },
-/* 118 */
+/* 119 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -15497,7 +15506,7 @@
 
 
 /***/ },
-/* 119 */
+/* 120 */
 /***/ function(module, exports) {
 
 	// The node and browser modules expose versions of this with the
@@ -15535,7 +15544,7 @@
 
 
 /***/ },
-/* 120 */
+/* 121 */
 /***/ function(module, exports, __webpack_require__) {
 
 	
@@ -15704,22 +15713,16 @@
 
 
 /***/ },
-/* 121 */
+/* 122 */
 /***/ function(module, exports) {
 
 	module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAIAAACRXR/mAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH4AUHERA7aYo02QAAAstJREFUWMPVmTuu6jAQhu04CZRIFBQIUVGAeIQ+SDSwAKiho+SsBFbCChBLyEaAJZDEvsXojnLytA3x5U7Fy/aXfx4eG0J+G6WUfIFZ5D8yec3qUrdk3i9x6PcBZTkopbZtf5datm1PJhNCCGMMiFPc8NayLEqpZVmWZSR12u02IcRxnH/s6OQazWaTEOK6brmchJDNZhMEwfV6BWlrdDpjrFIn+Ha/34u/9ng8ptNpXWSgGaxa5CPgBqY4jqMoCsMQyGazGZJ9rPJRSh3HgSguGgmhjUycc1ArjuMkmVJQQtI0Go38vOl2uyhGiU6+76eYkIxzntJMUrZCgfv9fjkTDj6dTkKI1+slMpbrTUkPglS/yFzXXSwWWKWKChVAr9drIUQURSm1wOBzJCt/TpgWS2D6u9VqlTs+qyoMPh6PJWQYZ5CbWGjU6hyldLlcyuc2PMDPz08JWRiGnPPn84ne1GkIer1evoxvkEVRpBpn+cso6QzLvEMmpUJlbGZlB9ekyFJ8qQxIkklJoISlodn9ftfxpnZnkiSDSFetZ7V0ItgtVmqW9Kah/gw2QSDjnCNZMuAwA4bDIVZRqY0TX2sIC2SHwyEMQ6ioWYMt63K5VAaZJYRACCFE6sVH7LOzaQZ+0om5ZWw0GkEzU+8JTL5MwHYkxQQxgb9T5Xu/3Odbp9PRzlhVnRTKqe/7elhKOnmeZ+I8XMSUjHdJ3yn3YUVjksWzciucz+f1bjgwl0azpdcHKO/otTeAGt1i6oiRbbCMMuEa5/OZc557IMtlqv26EJbxfZ9znj2+ZuPJ3N0dxNZut0sdrOVr5odZcTqIMCRLXo14nmeo+ZS/SAKm8ksRQ2Tb7TYIgtvtNh6PDeWd6qnEkLNklsm90n2n89ZBNLceIUyejDGGXbkkmTnPGq2TlQ/KGBsMBl/3L9A7G3yr1VJO87qxOOca/dYfrZsuDgBFLwQAAAAASUVORK5CYII="
 
 /***/ },
-/* 122 */
-/***/ function(module, exports) {
-
-	module.exports = "\n<div class=\"v-spinner\" v-show=\"loading\">\n    <div class=\"v-pulse v-pulse1\" v-bind:style=\"[spinnerStyle,spinnerDelay1]\">\n    </div><div class=\"v-pulse v-pulse2\" v-bind:style=\"[spinnerStyle,spinnerDelay2]\">\n    </div><div class=\"v-pulse v-pulse3\" v-bind:style=\"[spinnerStyle,spinnerDelay3]\">\n    </div>\n  </div>\n";
-
-/***/ },
 /* 123 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div id=\"app\">\n  <template v-if=\"loading\">\n    <h1>Loading...</h1></br>\n    <pulse-spinner :loading=\"loading\"></pulse-spinner>\n  </template>\n  <template v-else>\n    <tags :labels.sync=\"labels\"></tags>\n    <bookmarks :bookmarks.sync=\"bookmarks\" :labels.sync=\"labels\" :repo.sync=\"repo\"></bookmarks>\n  </template>\n  </div>\n<a href=\"https://github.com/jethrokuan/bookmarks\"><img style=\"position: absolute; top: 0; left: 0; border: 0;\" src=\"https://camo.githubusercontent.com/121cd7cbdc3e4855075ea8b558508b91ac463ac2/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f677265656e5f3030373230302e706e67\" alt=\"Fork me on GitHub\" data-canonical-src=\"https://s3.amazonaws.com/github/ribbons/forkme_left_green_007200.png\"></a>\n";
+	module.exports = "\n<div class=\"v-spinner\" v-show=\"loading\">\n    <div class=\"v-pulse v-pulse1\" v-bind:style=\"[spinnerStyle,spinnerDelay1]\">\n    </div><div class=\"v-pulse v-pulse2\" v-bind:style=\"[spinnerStyle,spinnerDelay2]\">\n    </div><div class=\"v-pulse v-pulse3\" v-bind:style=\"[spinnerStyle,spinnerDelay3]\">\n    </div>\n  </div>\n";
 
 /***/ },
 /* 124 */
@@ -15731,7 +15734,7 @@
 /* 125 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = "\n<section id=\"tagbar\" _v-64e540ce=\"\">\n  <span id=\"display\" @click=\"toggleDisplay\" _v-64e540ce=\"\">\n    <img class=\"chevron\" src=\"" + __webpack_require__(121) + "\" :class=\" {'hide': display, 'show': !display} \" <=\"\" img=\"\" _v-64e540ce=\"\">\n    Tags\n  </span>\n  <section id=\"tags\" _v-64e540ce=\"\">\n    <tag-pill v-show=\"display\" v-for=\"label in labels\" :title.sync=\"label.title\" :color.sync=\"label.color\" :selected.sync=\"label.selected\" _v-64e540ce=\"\"></tag-pill>\n  </section>    \n</section>\n";
+	module.exports = "\n<section id=\"tagbar\" _v-64e540ce=\"\">\n  <span id=\"display\" @click=\"toggleDisplay\" _v-64e540ce=\"\">\n    <img class=\"chevron\" src=\"" + __webpack_require__(122) + "\" :class=\" {'hide': display, 'show': !display} \" <=\"\" img=\"\" _v-64e540ce=\"\">\n    Tags\n  </span>\n  <section id=\"tags\" _v-64e540ce=\"\">\n    <tag-pill v-show=\"display\" v-for=\"label in labels\" :title.sync=\"label.title\" :color.sync=\"label.color\" :selected.sync=\"label.selected\" _v-64e540ce=\"\"></tag-pill>\n  </section>    \n</section>\n";
 
 /***/ },
 /* 126 */
@@ -15743,20 +15746,27 @@
 /* 127 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<h1 _v-e6d00cd0=\"\">Bookmarks <a href=\"{{repoUrl}}\" _v-e6d00cd0=\"\">Repo</a></h1>\n<ol v-if=\"haveBookmarks\" id=\"bookmarks\" _v-e6d00cd0=\"\">\n  <bookmark v-for=\"bookmark in selectedBookmarks\" :bookmark.once=\"bookmark\" _v-e6d00cd0=\"\"></bookmark>\n</ol>\n<h2 v-else=\"\" _v-e6d00cd0=\"\">Nothing here!</h2>\n";
+	module.exports = "\n<ol v-if=\"haveBookmarks\" id=\"bookmarks\" _v-e6d00cd0=\"\">\n  <bookmark v-for=\"bookmark in selectedBookmarks\" :bookmark.once=\"bookmark\" _v-e6d00cd0=\"\"></bookmark>\n</ol>\n<h2 v-else=\"\" _v-e6d00cd0=\"\">Nothing here!</h2>\n";
 
 /***/ },
 /* 128 */
+/***/ function(module, exports) {
+
+	module.exports = "\n<div id=\"app\" _v-fb5a5486=\"\">\n  <template v-if=\"loading\">\n    <div id=\"loading\" _v-fb5a5486=\"\">\n      <h1 _v-fb5a5486=\"\">Loading...</h1>\n      <pulse-spinner :loading=\"loading\" _v-fb5a5486=\"\"></pulse-spinner>\n    </div>\n  </template>\n  <template v-else=\"\">\n  <tags :labels.sync=\"labels\" _v-fb5a5486=\"\"></tags>\n               <h1 _v-fb5a5486=\"\">Bookmarks<a href=\"{{repoUrl}}\" _v-fb5a5486=\"\">Repo</a></h1>\n               <hr _v-fb5a5486=\"\">\n  <bookmarks :bookmarks.sync=\"bookmarks\" :labels.sync=\"labels\" :repo.sync=\"repo\" _v-fb5a5486=\"\"></bookmarks>\n  <footer _v-fb5a5486=\"\">Built with ❤ by <a href=\"http://www.jethrokuan.com\" _v-fb5a5486=\"\">Jethro Kuan</a></footer>\n  </template>\n</div>\n<a href=\"https://github.com/jethrokuan/bookmarks\" _v-fb5a5486=\"\"><img style=\"position: absolute; top: 0; left: 0; border: 0;\" src=\"https://camo.githubusercontent.com/121cd7cbdc3e4855075ea8b558508b91ac463ac2/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f677265656e5f3030373230302e706e67\" alt=\"Fork me on GitHub\" data-canonical-src=\"https://s3.amazonaws.com/github/ribbons/forkme_left_green_007200.png\" _v-fb5a5486=\"\"></a>\n";
+
+/***/ },
+/* 129 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
 	__webpack_require__(110)
+	__webpack_require__(115)
 	__vue_script__ = __webpack_require__(104)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/App.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(123)
+	__vue_template__ = __webpack_require__(128)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -15765,7 +15775,7 @@
 
 
 /***/ },
-/* 129 */
+/* 130 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
@@ -15784,7 +15794,7 @@
 
 
 /***/ },
-/* 130 */
+/* 131 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
@@ -15803,7 +15813,7 @@
 
 
 /***/ },
-/* 131 */
+/* 132 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
@@ -15822,7 +15832,7 @@
 
 
 /***/ },
-/* 132 */
+/* 133 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
@@ -15841,7 +15851,7 @@
 
 
 /***/ },
-/* 133 */
+/* 134 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
@@ -15851,7 +15861,7 @@
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] node_modules/vue-spinner/src/PulseLoader.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(122)
+	__vue_template__ = __webpack_require__(123)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -15860,7 +15870,7 @@
 
 
 /***/ },
-/* 134 */
+/* 135 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(global) {/*!
@@ -25789,7 +25799,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
 
 /***/ },
-/* 135 */
+/* 136 */
 /***/ function(module, exports) {
 
 	module.exports = function(module) {
@@ -25806,4 +25816,4 @@
 
 /***/ }
 /******/ ]);
-//# sourceMappingURL=app.55e5602c3af8dc50188f.js.map
+//# sourceMappingURL=app.fef67a97313804b02b33.js.map
