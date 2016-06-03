@@ -51,11 +51,5 @@ export default {
 <style lang="scss" scoped>
 #bookmarks {
     text-align: left;
-    max-height: 60vh;
-    overflow-y: auto;
-}
-
-::-webkit-scrollbar { 
-    display: none; 
 }
 </style>

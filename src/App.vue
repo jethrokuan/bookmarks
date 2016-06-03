@@ -127,9 +127,7 @@ footer {
     justify-content: center;
     width: 720px;
 
-    position:absolute;
     margin: 0 auto auto;
-    bottom: 30px;
 }
 </style>
 
